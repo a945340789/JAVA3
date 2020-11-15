@@ -16,4 +16,68 @@
 4. 实例化研究生类时，可采用运行时通过main方法的参数args一次性赋值，也可采用Scanner类实现运行时交互式输入。
 5. 根据输入情况，要在程序中做异常处理。
 # 实验过程
+1. 构造两个接口学生管理接口（Colleagestudent）和教师管理接口（Teacher），Colleagestudent接口里有缴费学费和查询学费的两个静态方法，Teacher接口里有发放薪水和查询薪水的两个静态方法；
+2. 编辑一个用来获取money的学校财务类；
+3. 编辑一个博士研究生类（Graduate），实现学生管理接口（Colleagestudent）和教师管理接口（Teacher），并加入姓名、性别、年龄、每学期学费、每月薪水等属性，构造各种静态的方法；
+4. 编辑一个Control类，用toshow（）方法实现Graduate类中的各种方法；
+5. 编辑一个测试类（Test），实例化Control，实现toshow（）方法；
+# 主要代码
+swith方法
+```
+ int i;
+		 i=sct.nextInt();
+	
+			switch (i) {
+			case 1:
+			    System.out.println("man");
+				break;
+			case 2:
+                System.out.println("woman");
+                break;
+			default:
+				System.out.println("你输入的有误");
+				System.exit(1);
+				break;
+			}
+```
+异常类
 1.
+```
+   	try {
+			  System.out.println("请输入年龄");
+			  age=sct.nextInt();
+		      } 
+		  catch (Exception e) {
+
+          System.out.println("你出现了异常");
+    
+		  }	
+```
+2.
+```
+try {
+			 Schoolfinance a=new  Schoolfinance();
+			 a.setMoney(7000.0);
+			 double moneys=a.getMoney();
+			 System.out.println("你发放的薪水为"+moneys);
+		} catch (Exception e) {
+			System.out.println("你输入的出现了异常");
+		}
+```
+3.
+```
+	try {
+    		id1=scb.nextInt();
+    		if(id1==b) {
+    			System.out.println("你的学费支付了："+id1+"元,支付成功");
+         		break;
+    		}else {
+    			 System.out.println("你输入的有误");
+    			 
+    		}
+     		
+		} catch (Exception e) {
+			str="您输入有误,请输入一个整数:";
+			continue;
+		}
+```
